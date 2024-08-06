@@ -99,3 +99,21 @@ else :
     print("could not find demo.txt") 
 
 
+
+# The seek() function in Python is used to change the current position of the file pointer within a file. This allows you to control where you start reading or writing in a file.
+#  The file pointer is like a cursor that indicates your current position within the file's content.
+
+with open("sample.txt", "r") as file:
+    file.seek(14)
+    content = file.read()
+    print(content)
+
+
+
+f = open("sample.txt", "r")
+
+f.seek(4)
+data = f.read()
+print( "this is the content line " , content)
+print(data)
+# seek funtion in python used for changing the current postion of the file pointer within a file ...this allows us to control where we want to read or write

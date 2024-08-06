@@ -110,9 +110,114 @@ def prime(num):
             return False
         return True
     
+def primes_between(start, end):
+    primeNumber = []
+    for i in range(start , end+1):
+        if(prime(i)):
+         primeNumber.append(i)
+         return primeNumber    
+
+
+
 number = 24
 if prime(number):
     print(f"{number} is a prime number.")
 else:
     print(f"{number} is not a prime number.")        
+
+
+list = [1,3,4,5,6,6]
+
+for i in list:
+    if i==3:
+        continue
+    print(i)
+
+
+     # check if the year is leap or not
+
+def isLeap(year):
+    if(year%4==0 and year%100!=0) or ( year%400==0):
+        return True
+    else :
+        return False    
     
+year = 2000
+if isLeap(year):
+    print(f"{year} is a leap year.")
+else:
+    print(f"{year} is not a leap year.")
+
+
+
+
+# calculated a programm to reverse a number
+
+def reverseAnum(num):
+    reversedNum = 0
+    while(num>0):
+        digit = num%10
+        # Get the last digit
+        reversedNum = reversedNum*10+digit
+        # Append it to the reversed number
+        num = num//10
+
+    return reversedNum  
+
+
+
+print(reverseAnum(456))
+
+
+# pytoon program that accept a sentance and return the upparcase , lowercase and number
+
+def countChar(str):
+    upparCase = 0
+    lowerCase = 0
+    digit = 0
+    for char in str:
+        if char.isupper():
+            upparCase += 1
+        if char.islower(): 
+            lowerCase += 1
+        if char.isdigit():
+            digit += 1
+
+        return upparCase , lowerCase , digit             
+    
+
+sentence = str(input("ENTER A SENTNCE"))
+
+uppar , lower , digit = countChar(sentence)
+
+print(f"upparcase letter : {uppar}")
+print(f"lowercase letter : {lower}")
+print(f"digit letter : {digit}")
+
+
+
+def count_characters(sentence):
+    uppercase_count = 0
+    lowercase_count = 0
+    digit_count = 0
+
+    for char in sentence:
+        if char.isupper():
+            uppercase_count += 1
+        elif char.islower():
+            lowercase_count += 1
+        elif char.isdigit():
+            digit_count += 1
+
+    return uppercase_count, lowercase_count, digit_count
+
+# Example usage
+sentence = input("Enter a sentence: ")
+
+uppercase_count, lowercase_count, digit_count = count_characters(sentence)
+
+print(f"Uppercase letters: {uppercase_count}")
+print(f"Lowercase letters: {lowercase_count}")
+print(f"Digits: {digit_count}")
+
+
